@@ -1,5 +1,9 @@
 package models;
 
+import org.w3c.dom.Node;
+
+import java.util.Scanner;
+
 public class Show {
     private String showTitle = "";
     private int showRunTime; // in minutes
@@ -15,6 +19,7 @@ public class Show {
         this.showTicketPrice = showTicketPrice;
 
     }
+
 
     public String getShowTitle() {
         return showTitle;
@@ -55,4 +60,5 @@ public class Show {
     public void setShowTicketPrice(double showTicketPrice) {
         this.showTicketPrice = showTicketPrice;
     }
+
 }
