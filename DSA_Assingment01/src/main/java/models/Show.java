@@ -1,4 +1,5 @@
 package models;
+import lists.ShowList;
 
 
 import java.util.Scanner;
@@ -24,8 +25,7 @@ public class Show {
 
     }
 
-
-
+    ShowList<String> names = new ShowList<>();
 
 
 
