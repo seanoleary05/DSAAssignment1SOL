@@ -1,6 +1,5 @@
 package models;
 
-import org.w3c.dom.Node;
 
 import java.util.Scanner;
 
@@ -11,6 +10,7 @@ public class Show {
     private String showEndDate = "";
     private double showTicketPrice;
 
+
     public Show(String showTitle,int showRunTime, String showStartDate, String showEndDate, double showTicketPrice) {
         this.showTitle = showTitle;
         this.showRunTime = showRunTime;
@@ -18,7 +18,10 @@ public class Show {
         this.showEndDate = showEndDate;
         this.showTicketPrice = showTicketPrice;
 
+
     }
+
+
 
 
     public String getShowTitle() {

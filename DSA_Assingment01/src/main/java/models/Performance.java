@@ -9,7 +9,7 @@ public class Performance {
     private Array circleSeats;
     private Array stallsSeats;
 
-    public Performance(String performanceDate, char performanceTime) {
+    public Performance(String performanceDate, char performanceTime,Array circleSeats, Array stallsSeats, Array balconySeats) {
         this.performanceDate = performanceDate;
         setPerformanceTime(performanceTime);
         this.circleSeats=circleSeats;
