@@ -19,18 +19,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    /*  public void addShow(){
-        String showName = Utilities.readnextLine("Enter the name of the show");
-        int showTime = Utilities.readnextInt("In minutes, How long will the show be?");
-        String showStartDate = Utilities.readnextLine("What date does the show start");
-        String showEndDate = Utilities.readnextLine("What date does the show end?");
-        double showTicketPrice = Utilities.readNextDouble("How much are the tickets for this show");
 
-
-
-
-    }
-*/
 
 
 

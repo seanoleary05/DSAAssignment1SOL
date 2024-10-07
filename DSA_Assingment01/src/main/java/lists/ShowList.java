@@ -1,27 +1,15 @@
 package lists;
 
 import iterators.ShowIterator;
+import iterators.ShowNode;
 
 import java.util.Iterator;
 
 public class ShowList<T> implements Iterable<T>  {
-    S
-
+    ShowList<String> names = new ShowList<>();
 
 
     public ShowNode<T> head = null;
-
-
-
-    class ShowNode<N>{
-        public ShowNode<N> next=null;
-        private N contents;
-
-        public N getContents() {return contents;}
-        public void setContents(N contents) {this.contents = contents;}
-    }
-
-
 
 
     public void addShow(T data) { //Add element to head of the show list
@@ -30,20 +18,14 @@ public class ShowList<T> implements Iterable<T>  {
         sn.next=head;
         head=sn;
     }
-    /* public Iterator<T> iterator() {
-        return new ShowIterator<T>(head);
+     public Iterator<T> iterator() {
+         return new ShowIterator<>(head);
 
-    }
-
-     */
+     }
 
 
 
 
-
-    public void clear(){ // empties list
-        head=null;
-    }
 
 
 }
