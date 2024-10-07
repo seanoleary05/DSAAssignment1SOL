@@ -14,4 +14,35 @@ public class Booking {
         this.seatDetails = seatDetails;
     }
 
+    public String getCustomerDetails() {
+        return customerDetails;
+    }
+
+    public void setCustomerDetails(String customerDetails) {
+        this.customerDetails = customerDetails;
+    }
+
+    public String getSeatDetails() {
+        return seatDetails;
+    }
+
+    public void setSeatDetails(String seatDetails) {
+        this.seatDetails = seatDetails;
+    }
+
+    public Performance getPerformance() {
+        return performance;
+    }
+
+    public void setPerformance(Performance performance) {
+        this.performance = performance;
+    }
+
+    public int getBookingID() {
+        return bookingID;
+    }
+
+    public void setBookingID(int bookingID) {
+        this.bookingID = bookingID;
+    }
 }
