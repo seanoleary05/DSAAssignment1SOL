@@ -10,7 +10,7 @@ import utils.Utilities;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class HelloApplication extends Application {
+public class HelloApplication <T> extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         BorderPane root = new BorderPane();
@@ -18,6 +18,9 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+    T node;
+
 
     public void addShow(){
         String showName = Utilities.readnextLine("Enter the name of the show");

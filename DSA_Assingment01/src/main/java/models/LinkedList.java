@@ -1,14 +1,12 @@
 package models;
 
-import org.w3c.dom.Node;
-
-public class LinkedList {
+public class LinkedList<F> {
     public Node head;
     public class Node {
 
 
     public Node next;
-    Object Show;
+    Show show;
 }
 
     public Node addNewNode(){
