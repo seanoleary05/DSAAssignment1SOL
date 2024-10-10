@@ -19,7 +19,7 @@ public class HelloApplication <T> extends Application {
         stage.show();
     }
 
-    T node;
+
 
 
     public void addShow(){
