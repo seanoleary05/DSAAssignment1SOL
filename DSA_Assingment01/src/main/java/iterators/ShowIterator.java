@@ -1,7 +1,5 @@
 package iterators;
 
-import lists.ShowList;
-
 
 import java.util.Iterator;
 
@@ -26,7 +24,12 @@ public class ShowIterator<K> implements Iterator<K> {
     }
 
 
+
 }
+
+
+
+
 
 
 
