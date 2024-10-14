@@ -2,17 +2,20 @@ package models;
 
 import iterators.ShowIterator;
 import iterators.ShowNode;
+import org.w3c.dom.Node;
 
 
 import java.util.*;
 
 
-public class ShowList<T> implements Iterable<T> {
-    public ShowNode<T> head = null;
+public class ShowList<K> implements Iterable<K> {
 
-    public void addShow(T data) { //Add element to head of the show list
-        ShowNode<T> sn = new ShowNode<>();
-        sn.setContents(data);
+   ShowNode<K> head = null;
+
+
+    public void addShow(K data) { //Add element to head of the show list
+        ShowNode<K> sn = new ShowNode<>(data);
+        sn.setData(data);
         sn.next = head;
         head = sn;
     }
@@ -22,9 +25,9 @@ public class ShowList<T> implements Iterable<T> {
     }
 
 
-    public Show findShow(T soughtShow) {
-        ShowNode<T> temp = head;
-        while (temp != null && temp.getContents() != soughtShow) {
+    public Show findShow(K soughtShow) {
+        ShowNode<K> temp = head;
+        while (temp != null && temp.getData() != soughtShow) {
             temp = temp.next;
             if (temp == null) {
                 throw new NullPointerException("Show dosent exist");
@@ -35,7 +38,7 @@ public class ShowList<T> implements Iterable<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<K> iterator() {
         return new ShowIterator<>(head);
     }
 }
