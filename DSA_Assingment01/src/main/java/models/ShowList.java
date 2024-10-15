@@ -10,6 +10,9 @@ import java.util.*;
 
 public class ShowList<K> implements Iterable<K> {
 
+    ShowList<K> shows = new ShowList<>();
+
+
    ShowNode<K> head = null;
 
 
@@ -18,6 +21,14 @@ public class ShowList<K> implements Iterable<K> {
         sn.setData(data);
         sn.next = head;
         head = sn;
+    }
+
+
+    public void listShows(K data){
+        System.out.println("List of Shows:");
+        for(K s: shows){
+            System.out.println(s);
+        }
     }
 
     public void clear() {
