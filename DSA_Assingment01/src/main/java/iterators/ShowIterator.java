@@ -1,7 +1,5 @@
 package iterators;
 
-import lists.ShowList;
-
 
 import java.util.Iterator;
 
@@ -22,11 +20,16 @@ public class ShowIterator<K> implements Iterator<K> {
     public K next() {
         ShowNode<K> temp = pos;
         pos = pos.next;
-        return temp.getContents();
+        return temp.getData();
     }
 
 
+
 }
+
+
+
+
 
 
 

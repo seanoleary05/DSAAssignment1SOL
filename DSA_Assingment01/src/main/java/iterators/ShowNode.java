@@ -1,13 +1,17 @@
 package iterators;
-import lists.ShowList;
-import models.Show;
 
 public class ShowNode<K> {
         public ShowNode<K> next = null;
-        private K contents;
+        private K data;
 
-        public K getContents() {return contents;}
-        public void setContents(K c) {this.contents = c;}
+
+         public ShowNode(K data){
+            this.data=data;
+            this.next=null;
+        }
+
+        public K getData() {return data;}
+        public void setData(K c) {this.data = c;}
 
 
 
