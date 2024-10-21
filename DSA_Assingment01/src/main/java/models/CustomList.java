@@ -9,11 +9,11 @@ import iterators.Node;
 import java.util.*;
 
 
-public class ShowList<K> implements Iterable<K> {
+public class  CustomList<K> implements Iterable<K> {
 
-    private ShowList<K> s;
+    public CustomList<K> s;
 
-    public ShowList() {s = new ShowList<>();}
+    public CustomList() {s = new CustomList<K>();}
 
 
    Node<K> head = null;
