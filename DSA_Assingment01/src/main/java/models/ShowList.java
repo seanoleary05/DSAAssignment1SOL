@@ -1,8 +1,9 @@
 package models;
 
-import iterators.ShowIterator;
-import iterators.ShowNode;
-import org.w3c.dom.Node;
+import iterators.CustomIterator;
+import iterators.Node;
+
+
 
 
 import java.util.*;
@@ -10,14 +11,21 @@ import java.util.*;
 
 public class ShowList<K> implements Iterable<K> {
 
-    ShowList<K> shows = new ShowList<>();
+    private ShowList<K> s;
+
+    public ShowList() {s = new ShowList<>();}
 
 
-   ShowNode<K> head = null;
+   Node<K> head = null;
+
+
+   public void showStart(){
+       s.addShow(head.getData());
+   }
 
 
     public void addShow(K data) { //Add element to head of the show list
-        ShowNode<K> sn = new ShowNode<>(data);
+        Node<K> sn = new Node<>(data);
         sn.setData(data);
         sn.next = head;
         head = sn;
@@ -26,18 +34,18 @@ public class ShowList<K> implements Iterable<K> {
 
     public void listShows(K data){
         System.out.println("List of Shows:");
-        for(K s: shows){
+        for(K s: s){
             System.out.println(s);
         }
     }
 
     public void clear() {
         head = null;
-    }
+    } //reset facility
 
 
     public Show findShow(K soughtShow) {
-        ShowNode<K> temp = head;
+        Node<K> temp = head;
         while (temp != null && temp.getData() != soughtShow) {
             temp = temp.next;
             if (temp == null) {
@@ -50,6 +58,6 @@ public class ShowList<K> implements Iterable<K> {
 
     @Override
     public Iterator<K> iterator() {
-        return new ShowIterator<>(head);
+        return new CustomIterator<>(head);
     }
 }

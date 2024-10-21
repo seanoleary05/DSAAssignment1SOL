@@ -19,4 +19,9 @@ public class Utilities {
         System.out.print(prompt);
         return input.nextDouble();
     }
+    public static String readNextLine(String prompt) {
+        Scanner input = new Scanner(System.in);
+        System.out.print(prompt);
+        return input.nextLine();
+    }
 }

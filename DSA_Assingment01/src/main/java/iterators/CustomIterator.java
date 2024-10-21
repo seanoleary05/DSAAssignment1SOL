@@ -3,13 +3,13 @@ package iterators;
 
 import java.util.Iterator;
 
-public class ShowIterator<K> implements Iterator<K> {
+public class CustomIterator<K> implements Iterator<K> {
 
-    private ShowNode<K> pos;
+    private Node<K> pos;
 
 
-    public ShowIterator(ShowNode<K> snode) {
-        pos = snode;
+    public CustomIterator(Node<K> node) {
+        pos = node;
     }
 
     public boolean hasNext() {
@@ -18,7 +18,7 @@ public class ShowIterator<K> implements Iterator<K> {
     }
 
     public K next() {
-        ShowNode<K> temp = pos;
+        Node<K> temp = pos;
         pos = pos.next;
         return temp.getData();
     }
