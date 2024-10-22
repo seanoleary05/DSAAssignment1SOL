@@ -8,4 +8,6 @@ module com.example.dsa_assingment01 {
     exports com.example.dsa_assignment01;
     exports models;
     opens models to javafx.fxml;
+    exports lists;
+    opens lists to javafx.fxml;
 }
