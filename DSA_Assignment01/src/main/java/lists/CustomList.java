@@ -10,14 +10,15 @@ import java.util.*;
 
 public class CustomList<K> implements Iterable<K> {
 
-    CustomList<K> shows = new CustomList<>();
+    CustomList<K>cList = new CustomList<>();
+
 
     CustomNode<K> head = null;
     CustomNode<K> current;
     CustomNode<K> last;
 
 
-    public void addShow(K data) { //Add element to head of the show list
+    public void add(K data) { //Add element to head of the show list
         CustomNode<K> sn = new CustomNode<>(data);
         sn.setData(data);
         sn.next = head;
@@ -25,9 +26,9 @@ public class CustomList<K> implements Iterable<K> {
     }
 
 
-    public void listShows(K data){
+    public void list(){
         System.out.println("List of Shows:");
-        for(K s: shows){
+        for(K s: cList){
             System.out.println(s);
         }
     }

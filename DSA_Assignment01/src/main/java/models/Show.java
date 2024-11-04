@@ -63,4 +63,14 @@ public class Show<T> {
         this.showTicketPrice = showTicketPrice;
     }
 
+    @Override
+    public String toString() {
+        return "Show{" +
+                "showTitle='" + showTitle + '\'' +
+                ", showRunTime=" + showRunTime +
+                ", showStartDate='" + showStartDate + '\'' +
+                ", showEndDate='" + showEndDate + '\'' +
+                ", showTicketPrice=" + showTicketPrice +
+                '}';
+    }
 }

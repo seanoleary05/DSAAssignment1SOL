@@ -32,4 +32,15 @@ public class Performance {
     public void setPerformanceTime(char performanceTime) {
         this.performanceTime = performanceTime;
     }
+
+    @Override
+    public String toString() {
+        return "Performance{" +
+                "performanceDate='" + performanceDate + '\'' +
+                ", performanceTime=" + performanceTime +
+                ", balconySeats=" + balconySeats +
+                ", circleSeats=" + circleSeats +
+                ", stallsSeats=" + stallsSeats +
+                '}';
+    }
 }

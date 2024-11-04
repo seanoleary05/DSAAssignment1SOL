@@ -34,4 +34,13 @@ public class Customer {
     public void setCustomerPhoneNumber(int customerPhoneNumber) {
         this.customerPhoneNumber = customerPhoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerName='" + customerName + '\'' +
+                ", customerEmail='" + customerEmail + '\'' +
+                ", customerPhoneNumber=" + customerPhoneNumber +
+                '}';
+    }
 }

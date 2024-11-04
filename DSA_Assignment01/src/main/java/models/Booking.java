@@ -45,4 +45,14 @@ public class Booking {
     public void setBookingID(int bookingID) {
         this.bookingID = bookingID;
     }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "customerDetails='" + customerDetails + '\'' +
+                ", bookingID=" + bookingID +
+                ", performance=" + performance +
+                ", seatDetails='" + seatDetails + '\'' +
+                '}';
+    }
 }

@@ -18,7 +18,6 @@ public class HelloApplication <T> extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
 
-        CustomList<T> customList = new CustomList<>();
 
 
         Button b = new Button();
