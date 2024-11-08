@@ -1,8 +1,5 @@
 package utils;
 
-import lists.CustomList;
-import models.Show;
-
 
 import java.util.Scanner;
 
@@ -34,9 +31,7 @@ public class Utilities {
         return input.nextLine();
     }
 
-    public boolean addShow(Show show) {
-        return false;
-    }
+
 
 
 

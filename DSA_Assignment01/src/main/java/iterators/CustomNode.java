@@ -1,10 +1,8 @@
 package iterators;
 
-import lists.CustomList;
-
 public class CustomNode<K> {
-        public CustomNode<K> next = null;
-        private K data; //ADT reference
+         public CustomNode<K> next = null;
+         public K data; //ADT reference
 
 
          public CustomNode(K data){
@@ -13,9 +11,6 @@ public class CustomNode<K> {
         }
 
 
-
-        public K getData() {return data;}
-        public void setData(K c) {this.data = c;}
 
 
 

@@ -1,4 +1,4 @@
-package lists;
+package com.example.dsa_assignment01;
 
 import iterators.CustomIterator;
 import iterators.CustomNode;
@@ -10,27 +10,28 @@ import java.util.*;
 
 public class CustomList<K> implements Iterable<K> {
 
-    CustomList<K>cList = new CustomList<>();
 
-
-    CustomNode<K> head = null;
-    CustomNode<K> current;
-    CustomNode<K> last;
+    private CustomNode<K> head;
+    private int size;
 
 
     public void add(K data) { //Add element to head of the show list
         CustomNode<K> sn = new CustomNode<>(data);
-        sn.setData(data);
         sn.next = head;
         head = sn;
     }
 
 
-    public void list(){
+    public String list(){
+        String result ="";
+        CustomNode<K> current = head;
         System.out.println("List of Shows:");
-        for(K s: cList){
-            System.out.println(s);
+
+        while (current!= null){   // while current is not the at the end of the list
+            result += current.next;
+            current = current.next;
         }
+        return result;
     }
 
     public void clear() {
@@ -40,7 +41,7 @@ public class CustomList<K> implements Iterable<K> {
 
     public Show<K> findShow(K soughtShow) {
         CustomNode<K> temp = head;
-        while (temp != null && temp.getData() != soughtShow) {
+        while (temp != null && temp.data != soughtShow) {
             temp = temp.next;
             if (temp == null) {
                 throw new NullPointerException("Show dosent exist");
@@ -52,6 +53,6 @@ public class CustomList<K> implements Iterable<K> {
 
     @Override
     public Iterator<K> iterator() {
-        return new CustomIterator<>();
+        return new CustomIterator<>(head); // passes the head to the iterator
     }
 }
