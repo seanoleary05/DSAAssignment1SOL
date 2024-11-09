@@ -2,7 +2,7 @@ package iterators;
 
 public class CustomNode<K> {
          public CustomNode<K> next = null;
-         public K data; //ADT reference
+         private K data; //ADT reference
 
 
          public CustomNode(K data){
@@ -11,7 +11,11 @@ public class CustomNode<K> {
         }
 
 
-
-
-
+    public K getData() {
+        return data;
     }
+
+    public void setData(K c) {
+        data =c;
+    }
+}

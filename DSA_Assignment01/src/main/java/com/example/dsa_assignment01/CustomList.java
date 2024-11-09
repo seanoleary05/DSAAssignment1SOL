@@ -14,6 +14,9 @@ public class CustomList<K> implements Iterable<K> {
     private CustomNode<K> head;
     private int size;
 
+    public CustomList() {
+        this.head = null;
+    }
 
     public void add(K data) { //Add element to head of the show list
         CustomNode<K> sn = new CustomNode<>(data);
@@ -21,18 +24,24 @@ public class CustomList<K> implements Iterable<K> {
         head = sn;
     }
 
+/*
 
-    public String list(){
-        String result ="";
-        CustomNode<K> current = head;
-        System.out.println("List of Shows:");
 
-        while (current!= null){   // while current is not the at the end of the list
-            result += current.next;
-            current = current.next;
+    public static void  listShows(CustomList<K> list) {
+        String currentList = "";
+        System.out.println("Shows in the list:");
+        for (Object show : list) {
+            currentList +=  "\n" + Show.getShowTitle();
+
         }
-        return result;
+        return currentList;
     }
+
+*/
+
+
+
+
 
     public void clear() {
         head = null;
@@ -41,7 +50,7 @@ public class CustomList<K> implements Iterable<K> {
 
     public Show<K> findShow(K soughtShow) {
         CustomNode<K> temp = head;
-        while (temp != null && temp.data != soughtShow) {
+        while (temp != null && temp.getData() != soughtShow) {
             temp = temp.next;
             if (temp == null) {
                 throw new NullPointerException("Show dosent exist");

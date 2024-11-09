@@ -25,7 +25,7 @@ public class CustomIterator<K> implements Iterator<K> {
     public K next() {
         CustomNode<K> temp = pos;
         pos = pos.next;
-        return temp.data;
+        return temp.getData();
     }
 
 
