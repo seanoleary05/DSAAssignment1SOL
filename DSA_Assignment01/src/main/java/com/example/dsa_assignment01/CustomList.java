@@ -5,18 +5,19 @@ import iterators.CustomNode;
 import models.Show;
 
 
-import java.util.*;
+import java.util.Iterator;
 
 
 public class CustomList<K> implements Iterable<K> {
 
 
     private CustomNode<K> head;
-    private int size;
+    private int length = 0;
 
     public CustomList() {
         this.head = null;
     }
+
 
     public void add(K data) { //Add element to head of the show list
         CustomNode<K> sn = new CustomNode<>(data);
@@ -24,10 +25,10 @@ public class CustomList<K> implements Iterable<K> {
         head = sn;
     }
 
+
+
 /*
-
-
-    public static void  listShows(CustomList<K> list) {
+    public String listShows(CustomList<K> list) {
         String currentList = "";
         System.out.println("Shows in the list:");
         for (Object show : list) {
@@ -37,7 +38,8 @@ public class CustomList<K> implements Iterable<K> {
         return currentList;
     }
 
-*/
+ */
+
 
 
 
@@ -45,7 +47,21 @@ public class CustomList<K> implements Iterable<K> {
 
     public void clear() {
         head = null;
+        length = 0;
     }
+
+    public int length(){
+        return length;
+    }
+
+
+    public boolean empty(){
+        if(head==null){
+            return true;
+        }
+         return false;
+    }
+
 
 
     public Show<K> findShow(K soughtShow) {
@@ -59,6 +75,26 @@ public class CustomList<K> implements Iterable<K> {
         return null;
 
     }
+
+    public String toString()
+    {
+
+        String S = " ";
+
+        CustomNode<K> X = head;
+
+        if (X == null)
+            return S + " ";
+
+        while (X.next != null) {
+            S += (X.getData()) + "\n";
+            X = X.next;
+        }
+
+        S += String.valueOf(X.getData());
+        return S;
+    }
+
 
     @Override
     public Iterator<K> iterator() {

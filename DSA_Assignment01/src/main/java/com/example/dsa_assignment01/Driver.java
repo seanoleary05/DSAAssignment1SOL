@@ -11,7 +11,8 @@ public class Driver {
         CustomList<Object> list = new CustomList<>();
 
 
-        list.add(new Show("The Lion King", 45, "1st Jan", "3rd Jan", 12.99));
+        list.add(new Show<>("The Lion King", 45, "1st Jan", "3rd Jan", 12.99));
+        list.add(new Show<>("The Lion King 2", 60, "5th Jan", "7th Jan", 9.99));
 
         System.out.println("Welcome to the Theatre Application!");
         boolean running = true;
@@ -22,6 +23,10 @@ public class Driver {
             System.out.println("2. Add Performance");
             System.out.println("3. Add Customer");
             System.out.println("4. Add Booking");
+            System.out.println("5. List Shows");
+            System.out.println("6. Empty the list");
+
+            System.out.println("8. Exit Application");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -43,18 +48,49 @@ public class Driver {
 
                     Show show = new Show(name, runtime, startDate, endDate, price);
                     list.add(show);
-                    System.out.println("Show added to the list.");
+                    System.out.println("Show added to the head of the list.");
+                    break;
+
+                case 2:
+                    //Adds a performance to an existing show
+                    if(list.empty()){
+                        System.out.println("There are no shows in the list, try adding a show");
+                        System.out.println("Press Enter to Continue");
+                        scanner.nextLine();
+                    }
+
+
+
+                case 5:
+                    //Lists All Shows
+                    System.out.println("The list of all Shows are:");
+                    if(list.empty()){
+                        System.out.println("The List is empty");
+                        System.out.println("Press Enter to Continue");
+                        scanner.nextLine();
+
+                    }
+                    System.out.println("*************************************");
+                    System.out.println(list);
+                    System.out.println("*************************************");
+                    System.out.println("Press Enter To Continue");
+                    scanner.nextLine();
                     break;
 
 
-               /* case 5:
-                    //Lists All Shows
-                    CustomList.listShows(list);
 
-                */
+
 
 
                 case 6:
+                    // Clears the list of all Nodes
+                    list.clear();
+                    System.out.println("The List Has been deleted");
+                    scanner.nextLine();
+                    break;
+
+
+                case 8:
                     // Exit the program
                     running = false;
                     System.out.println("Exiting the application.");
@@ -64,16 +100,6 @@ public class Driver {
                     System.out.println("Invalid choice. Please try again.");
             }
         }
-
-    /*        public static void listShows(CustomList<Object> list ){
-                    for (Object obj : list) {
-                        Show show = (Show) obj;
-                        System.out.println(show);
-                    }
-
-                }
-
-     */
 
 
 
