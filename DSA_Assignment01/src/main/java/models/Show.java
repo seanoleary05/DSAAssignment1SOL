@@ -1,15 +1,17 @@
 package models;
 
+import com.example.dsa_assignment01.CustomList;
 import org.w3c.dom.Node;
 
 import java.util.Scanner;
 
-public class Show<T> {
+public class Show<K> {
     private String showTitle = "";
     private int showRunTime; // in minutes
     private String showStartDate = "";
     private String showEndDate = "";
     private double showTicketPrice;
+    private CustomList<Performance> performances;
 
     public Show(String showTitle,int showRunTime, String showStartDate, String showEndDate, double showTicketPrice) {
         this.showTitle = showTitle;
@@ -17,6 +19,9 @@ public class Show<T> {
         this.showStartDate = showStartDate;
         this.showEndDate = showEndDate;
         this.showTicketPrice = showTicketPrice;
+        this.performances = new CustomList<Performance>();
+
+
 
 
     }
@@ -63,14 +68,26 @@ public class Show<T> {
         this.showTicketPrice = showTicketPrice;
     }
 
+    public CustomList<Performance>getPerformances() {
+        return performances;
+    }
+
+    public void addPerformance(Performance performance) {
+        performances.add(performance);
+    }
+
+    public void removePerformance(Performance performance) {
+        performances.remove(performance);
+    }
+
     @Override
     public String toString() {
-        return "Show{" +
-                "showTitle='" + showTitle + '\'' +
-                ", showRunTime=" + showRunTime +
-                ", showStartDate='" + showStartDate + '\'' +
-                ", showEndDate='" + showEndDate + '\'' +
-                ", showTicketPrice=" + showTicketPrice +
-                '}';
+        return "Show" +
+                "Title: " + showTitle + '\'' +
+                ", Run-Time: " + showRunTime +
+                ", Start Date: " + showStartDate + '\'' +
+                ", End Date: " + showEndDate + '\'' +
+                ", Price: " + showTicketPrice
+                ;
     }
 }

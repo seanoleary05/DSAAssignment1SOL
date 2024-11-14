@@ -48,6 +48,7 @@ public class Driver {
 
                     Show show = new Show(name, runtime, startDate, endDate, price);
                     list.add(show);
+
                     System.out.println("Show added to the head of the list.");
                     break;
 
@@ -57,6 +58,7 @@ public class Driver {
                         System.out.println("There are no shows in the list, try adding a show");
                         System.out.println("Press Enter to Continue");
                         scanner.nextLine();
+                        System.out.println(list);
                     }
 
 

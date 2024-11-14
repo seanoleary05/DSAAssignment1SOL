@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class CustomList<K> implements Iterable<K> {
 
 
-    private CustomNode<K> head;
+    private CustomNode<K> head=null;
     private int length = 0;
 
     public CustomList() {
@@ -25,6 +25,31 @@ public class CustomList<K> implements Iterable<K> {
         head = sn;
     }
 
+    public boolean remove(K data) {
+        if (head == null) {
+            return false; // List is empty, nothing to remove
+        }
+
+        // If the head node is the one to be removed
+        if (head.getData().equals(data)) {
+            head = head.next; // Remove head node by moving to the next node
+            return true;
+        }
+
+        // Traverse the list to find the node to remove
+        CustomNode<K> current = head;
+        while (current.next != null && !current.next.getData().equals(data)) {
+            current = current.next;
+        }
+
+        // If the next node contains the data, remove it by skipping over it
+        if (current.next != null) {
+            current.next = current.next.next;
+            return true; // Successfully removed
+        }
+
+        return false; // Data not found in the list
+    }
 
 
 /*

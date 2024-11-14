@@ -16,6 +16,7 @@ public class CustomNode<K> {
     }
 
     public void setData(K c) {
-        data =c;
+        data = c;
     }
+
 }
