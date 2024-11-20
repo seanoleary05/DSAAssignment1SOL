@@ -11,8 +11,12 @@ import java.util.Iterator;
 public class CustomList<K> implements Iterable<K> {
 
 
-    private CustomNode<K> head=null;
+    public CustomNode<K> head=null;
     private int length = 0;
+
+
+
+
 
     public CustomList() {
         this.head = null;
@@ -23,6 +27,27 @@ public class CustomList<K> implements Iterable<K> {
         CustomNode<K> sn = new CustomNode<>(data);
         sn.next = head;
         head = sn;
+    }
+
+    public K find(K data) {
+        CustomNode<K> current = head;
+        while (current != null) {
+            if (current.getData().equals(data)) {
+                return current.getData();
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
+
+    public  K getShowByName(String showName) {
+        for (K show : this) {  // Using the iterator via for-each loop
+            if (show instanceof Show && ((Show) show).getShowTitle().equalsIgnoreCase(showName)) {
+                return show;
+            }
+        }
+        return null;  // If no match is found
     }
 
     public boolean remove(K data) {

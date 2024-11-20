@@ -19,4 +19,6 @@ public class CustomNode<K> {
         data = c;
     }
 
+
+
 }

@@ -36,6 +36,7 @@ public class Driver {
                     // Add a new Show to the list
                     System.out.print("Enter Show Name: ");
                     String name = scanner.nextLine();
+                    String showName = name;
                     System.out.print("Enter The Shows Runtime: ");
                     int runtime = scanner.nextInt();
                     scanner.nextLine(); // Jumps to nextline
@@ -52,14 +53,23 @@ public class Driver {
                     System.out.println("Show added to the head of the list.");
                     break;
 
-                case 2:
+               /* case 2:
                     //Adds a performance to an existing show
-                    if(list.empty()){
-                        System.out.println("There are no shows in the list, try adding a show");
-                        System.out.println("Press Enter to Continue");
-                        scanner.nextLine();
-                        System.out.println(list);
+                    System.out.println("Enter The Show name you want to add a Performance to");
+                    String findShowName = scanner.nextLine();
+                    Show selectedShow = CustomList.getShowByName(findShowName);
+
+
+                    if(selectedShow != null){
+                        System.out.println("Enter the performance date");
+                        String date = scanner.nextLine();
+                        System.out.println("Enter the time of the performance *77 for matinee, 69 for evening*");
+                        char time = scanner.next().charAt(0);
+                        BalconySeats[]
                     }
+
+                */
+
 
 
 
