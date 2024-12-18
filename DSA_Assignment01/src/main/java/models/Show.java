@@ -17,7 +17,7 @@ public class Show<K> {
 
     public Show(String showTitle,int showRunTime, String showStartDate, String showEndDate, double showTicketPrice) {
         this.showTitle = showTitle;
-        this.showRunTime = showRunTime;
+        setShowRunTime(showRunTime);
         this.showStartDate = showStartDate;
         this.showEndDate = showEndDate;
         this.showTicketPrice = showTicketPrice;
@@ -38,13 +38,18 @@ public class Show<K> {
         this.showTitle = showTitle;
     }
 
-    public int getShowRunTime() {
+    public int getShowRunTime()
+    {
         return showRunTime;
     }
 
-    public void setShowRunTime(int showRunTime) {
-        this.showRunTime = showRunTime;
+    public void setShowRunTime(int showRunTime)
+    {
+        if ((showRunTime > 30) && (showRunTime < 200))
+            this.showRunTime = showRunTime;
     }
+
+
 
     public  String getShowStartDate() {
         return showStartDate;
