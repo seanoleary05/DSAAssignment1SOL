@@ -35,6 +35,7 @@ public class Show<K> {
     }
 
     public void setShowTitle(String showTitle) {
+        if ((showTitle.length() > 4) && (showTitle.length() < 40))
         this.showTitle = showTitle;
     }
 

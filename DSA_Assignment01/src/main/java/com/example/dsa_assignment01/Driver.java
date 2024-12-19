@@ -53,22 +53,29 @@ public class Driver {
                     System.out.println("Show added to the head of the list.");
                     break;
 
-               /* case 2:
-                    //Adds a performance to an existing show
-                    System.out.println("Enter The Show name you want to add a Performance to");
-                    String findShowName = scanner.nextLine();
-                    Show selectedShow = CustomList.getShowByName(findShowName);
+              case 2:
+              // Add a new performance to the list
+                  System.out.println("Enter the Performance Date: ");
+                  String date = scanner.nextLine();
+                  String performanceDate = date;
+                  System.out.println("Enter the Performance Time: ");
+                  char performanceTime = scanner.next().charAt(0);
+                  boolean[][] balconySeats = new boolean[3][8];
+                  boolean[][] circleSeats = new boolean[3][10];
+                  boolean[][] stallsSeats = new boolean[4][10];
+
+                  Performance performance = new Performance(date,performanceTime,balconySeats,circleSeats,stallsSeats);
+                  list.add(performance);
+
+                  System.out.println("Performance added to the list.");
+                  break;
 
 
-                    if(selectedShow != null){
-                        System.out.println("Enter the performance date");
-                        String date = scanner.nextLine();
-                        System.out.println("Enter the time of the performance *77 for matinee, 69 for evening*");
-                        char time = scanner.next().charAt(0);
-                        BalconySeats[]
-                    }
 
-                */
+
+
+
+
 
 
 

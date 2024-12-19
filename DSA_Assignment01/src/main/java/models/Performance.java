@@ -4,12 +4,12 @@ import java.lang.reflect.Array;
 
 public class Performance {
     private String performanceDate = "";
-    private char performanceTime = 77; // 69 (Evening) or 77 (Matinee)
+    private char performanceTime; // 69 (Evening) or 77 (Matinee)
     private boolean[][] balconySeats;
     private boolean[][] circleSeats;
     private boolean[][] stallsSeats;
 
-    public Performance(String performanceDate, char performanceTime,Array circleSeats, Array stallsSeats, Array balconySeats) {
+    public Performance(String performanceDate, char performanceTime, boolean circleSeats[][], boolean stallsSeats[][], boolean balconySeats[][]) {
         this.performanceDate = performanceDate;
         setPerformanceTime(performanceTime);
         // Initialize seating arrangements
@@ -44,12 +44,17 @@ public class Performance {
         this.performanceDate = performanceDate;
     }
 
+    public String classifyPerformanceTime(){
+        return (performanceTime == 69) ? "Evening" : "Matinee";
+    }
+
     public char getPerformanceTime() {
-        return performanceTime;
+        return (performanceTime=='E') ? 69 : (performanceTime=='M') ? 77: 'I';
     }
 
     public void setPerformanceTime(char performanceTime) {
-        this.performanceTime = performanceTime;
+        performanceTime = Character.toUpperCase(performanceTime);
+        if(performanceTime == 'E' || performanceTime == 'M') { this.performanceTime = performanceTime; }
     }
 
     @Override
