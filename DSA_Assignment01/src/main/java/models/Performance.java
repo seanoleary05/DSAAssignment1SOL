@@ -8,6 +8,7 @@ public class Performance {
     private boolean[][] balconySeats;
     private boolean[][] circleSeats;
     private boolean[][] stallsSeats;
+    public int seatsCounter = 0;
 
     public Performance(String performanceDate, char performanceTime, boolean circleSeats[][], boolean stallsSeats[][], boolean balconySeats[][]) {
         this.performanceDate = performanceDate;
@@ -16,6 +17,7 @@ public class Performance {
         this.balconySeats = new boolean[3][8]; // 3 rows of 8 seats
         this.circleSeats = new boolean[3][10]; // 3 rows of 10 seats
         this.stallsSeats = new boolean[4][10]; // 4 rows of 10 seats
+
     }
     // Helper method to return the correct seating section based on the provided name
     private boolean[][] getSection(String section) {
@@ -61,9 +63,6 @@ public class Performance {
     public String toString() {
         return "Performance -> " +
                 " Date: " + performanceDate + '\'' +
-                ", Time: " + performanceTime +
-                ", BalconySeats: " + balconySeats +
-                ", CircleSeats: " + circleSeats +
-                ", StallsSeats=" + stallsSeats;
+                ", Time: " + performanceTime;
     }
 }

@@ -13,7 +13,6 @@ public class Driver {
 
         list.add(new Show<>("The Lion King", 45, "1st Jan", "3rd Jan", 12.99));
         list.add(new Show<>("The Lion King 2", 60, "5th Jan", "7th Jan", 9.99));
-
         System.out.println("Welcome to the Theatre Application!");
         boolean running = true;
 
@@ -23,7 +22,7 @@ public class Driver {
             System.out.println("2. Add Performance");
             System.out.println("3. Add Customer");
             System.out.println("4. Add Booking");
-            System.out.println("5. List Shows");
+            System.out.println("5. List All");
             System.out.println("6. Empty the list");
 
             System.out.println("8. Exit Application");
@@ -58,7 +57,7 @@ public class Driver {
                   System.out.println("Enter the Performance Date: ");
                   String date = scanner.nextLine();
                   String performanceDate = date;
-                  System.out.println("Enter the Performance Time: ");
+                  System.out.println("Enter the Performance Time *Evening Or Matinee: ");
                   char performanceTime = scanner.next().charAt(0);
                   boolean[][] balconySeats = new boolean[3][8];
                   boolean[][] circleSeats = new boolean[3][10];
@@ -81,8 +80,8 @@ public class Driver {
 
 
                 case 5:
-                    //Lists All Shows
-                    System.out.println("The list of all Shows are:");
+                    //Lists All Objects
+                    System.out.println("The list of all Items are:");
                     if(list.empty()){
                         System.out.println("The List is empty");
                         System.out.println("Press Enter to Continue");
