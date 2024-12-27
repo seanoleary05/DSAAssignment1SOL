@@ -8,6 +8,7 @@ public class CustomIterator<K> implements Iterator<K> {
     private CustomNode<K> pos;
 
 
+
     public CustomIterator(CustomNode<K> head){    //constructor
         this.pos=head;
     }

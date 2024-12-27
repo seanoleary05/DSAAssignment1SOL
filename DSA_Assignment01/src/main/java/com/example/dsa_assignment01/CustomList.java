@@ -10,6 +10,7 @@ import java.util.Iterator;
 
 public class CustomList<K> implements Iterable<K> {
 
+    private CustomList<K> items;
 
     public CustomNode<K> head=null;
     private int length = 0;

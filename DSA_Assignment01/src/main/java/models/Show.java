@@ -5,7 +5,11 @@ import com.example.dsa_assignment01.Driver;
 import iterators.CustomNode;
 import org.w3c.dom.Node;
 
+import java.io.*;
 import java.util.Scanner;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+
 
 public class Show<K> {
     private String showTitle = "";
@@ -13,7 +17,10 @@ public class Show<K> {
     private String showStartDate = "";
     private String showEndDate = "";
     private double showTicketPrice;
+    private Show link;
     private CustomList<Performance> performances;
+
+
 
     public Show(String showTitle,int showRunTime, String showStartDate, String showEndDate, double showTicketPrice) {
         this.showTitle = showTitle;
@@ -87,6 +94,25 @@ public class Show<K> {
     public void removePerformance(Performance performance) {
         performances.remove(performance);
     }
+
+
+
+
+
+
+
+    public static void saveList(String filename, CustomNode<Object> head) throws IOException {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
+            oos.writeObject(head);
+        }
+    }
+
+    public static CustomNode<Object> loadList(String filename) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            return (CustomNode<Object>) ois.readObject();
+        }
+    }
+
 
 
     @Override

@@ -1,13 +1,21 @@
 package com.example.dsa_assignment01;
+import java.io.IOException;
 import java.util.Scanner;
+
+import iterators.CustomNode;
+import org.w3c.dom.Node;
 import utils.Utilities;
 import models.*;
+
+import static models.Show.loadList;
+import static models.Show.saveList;
 
 
 public class Driver {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        CustomNode<Object> head = null;
         CustomList<Object> list = new CustomList<>();
 
 
@@ -24,8 +32,10 @@ public class Driver {
             System.out.println("4. Add Booking");
             System.out.println("5. List All");
             System.out.println("6. Empty the list");
+            System.out.println("7. Save The List");
+            System.out.println("8. Load a List");
 
-            System.out.println("8. Exit Application");
+            System.out.println("9. Exit Application");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -107,8 +117,25 @@ public class Driver {
                     scanner.nextLine();
                     break;
 
+                case 7:
+                    try {
+                        saveList("linkedList.ser", head);
+                        System.out.println("LinkedList saved successfully.");
+                    } catch (IOException e) {
+                        System.err.println("Error saving LinkedList: " + e.getMessage());
+                    }
+                    break;
 
                 case 8:
+                    try {
+                        head = loadList("linkedList.ser");
+                        System.out.println("LinkedList loaded successfully.");
+                    } catch (IOException | ClassNotFoundException e) {
+                        System.err.println("Error loading LinkedList: " + e.getMessage());
+                    }
+                    break;
+
+                case 9:
                     // Exit the program
                     running = false;
                     System.out.println("Exiting the application.");
