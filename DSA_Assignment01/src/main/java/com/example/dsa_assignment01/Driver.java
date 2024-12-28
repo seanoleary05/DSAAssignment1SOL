@@ -73,7 +73,7 @@ public class Driver {
                   boolean[][] circleSeats = new boolean[3][10];
                   boolean[][] stallsSeats = new boolean[4][10];
 
-                  Performance performance = new Performance(date,performanceTime,balconySeats,circleSeats,stallsSeats);
+                  Performance performance = new Performance(date,performanceTime);
                   list.add(performance);
 
                   System.out.println("Performance added to the list.");

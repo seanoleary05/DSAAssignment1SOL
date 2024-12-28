@@ -17,7 +17,6 @@ public class Show<K> {
     private String showStartDate = "";
     private String showEndDate = "";
     private double showTicketPrice;
-    private Show link;
     private CustomList<Performance> performances;
 
 

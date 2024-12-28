@@ -3,14 +3,14 @@ package models;
 import java.lang.reflect.Array;
 
 public class Performance {
-    private String performanceDate = "";
+    private String performanceDate = ""; //date of performance eg. 11th Jan
     private char performanceTime; // 69 (Evening) or 77 (Matinee)
     private boolean[][] balconySeats;
     private boolean[][] circleSeats;
     private boolean[][] stallsSeats;
     public int seatsCounter = 0;
 
-    public Performance(String performanceDate, char performanceTime, boolean circleSeats[][], boolean stallsSeats[][], boolean balconySeats[][]) {
+    public Performance(String performanceDate, char performanceTime) {
         this.performanceDate = performanceDate;
         setPerformanceTime(performanceTime);
         // Initialize seating arrangements
@@ -43,12 +43,10 @@ public class Performance {
     }
 
     public void setPerformanceDate(String performanceDate) {
+        if ((performanceDate.length() > 3) && (performanceDate.length() < 20))
         this.performanceDate = performanceDate;
     }
 
-    public String classifyPerformanceTime(){
-        return (performanceTime == 69) ? "Evening" : "Matinee";
-    }
 
     public char getPerformanceTime() {
         return (performanceTime=='E') ? 69 : (performanceTime=='M') ? 77: 'I';

@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ShowTest {
     Show<Object> testShow = new Show<>("testShow", 140, "12th", "13th", 19.99);
+    Performance testPerformance = new Performance("12th Jan",'M');
 
 
     @org.junit.jupiter.api.BeforeEach
@@ -42,6 +43,24 @@ public class ShowTest {
         assertEquals("ANewTypeOfShow", testShow.getShowTitle());
 
 
+    }
+    @org.junit.jupiter.api.Test
+    void setPerformanceDateTest() {
+        assertEquals("12th Jan", testPerformance.getPerformanceDate());
+        testPerformance.setPerformanceDate("12j"); // lower bound test, should fail
+        assertEquals("12th Jan", testPerformance.getPerformanceDate());
+        testPerformance.setPerformanceDate("Twelfth Of January 25"); // upper bound, should fail
+        assertEquals("12th Jan", testPerformance.getPerformanceDate());
+        testPerformance.setPerformanceDate("21st Jan"); // within bound, should pass
+        assertEquals("21st Jan", testPerformance.getPerformanceDate());
+
+    }
+    @org.junit.jupiter.api.Test
+    void setPerformanceTimeTest() {
+        testPerformance.setPerformanceTime('M');
+        assertEquals('M', testPerformance.getPerformanceTime());
+        testPerformance.setPerformanceTime('E');
+        assertEquals('E', testPerformance.getPerformanceTime());
     }
 }
 
