@@ -28,12 +28,8 @@ public class Driver {
             System.out.println("\nPlease choose an option:");
             System.out.println("1. Add Show");
             System.out.println("2. Add Performance");
-            System.out.println("3. Add Customer");
-            System.out.println("4. Add Booking");
             System.out.println("5. List All");
             System.out.println("6. Empty the list");
-            System.out.println("7. Save The List");
-            System.out.println("8. Load a List");
 
             System.out.println("9. Exit Application");
 
@@ -117,7 +113,7 @@ public class Driver {
                     scanner.nextLine();
                     break;
 
-                case 7:
+               /* case 7:
                     try {
                         saveList("linkedList.ser", head);
                         System.out.println("LinkedList saved successfully.");
@@ -135,6 +131,8 @@ public class Driver {
                     }
                     break;
 
+
+                */
                 case 9:
                     // Exit the program
                     running = false;
